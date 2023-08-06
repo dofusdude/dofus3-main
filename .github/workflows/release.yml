@@ -68,4 +68,4 @@ jobs:
                 mounts_images_vector.tar.gz
         -
             name: Notify doduapi to update
-            run: curl -X POST https://dofusdu.de/dofus2beta/update/${{ secrets.DODUAPI_TOKEN }}
+            run: curl -X POST https://api.dofusdu.de/dofus2beta/update/${{ secrets.DODUAPI_TOKEN }}
