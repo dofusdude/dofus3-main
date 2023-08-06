@@ -1,0 +1,71 @@
+name: release
+
+on:
+    workflow_dispatch:
+      inputs:
+        version:
+          type: string
+          description: The version that will be downloaded
+          required: true
+
+jobs:
+    tag:
+        runs-on: ubuntu-latest
+        steps:
+        -
+            name: Checkout
+            uses: actions/checkout@v2
+        - 
+            name: Tag snapshot
+            uses: tvdias/github-tagger@v0.0.1
+            with:
+                repo-token: ${{ secrets.GITHUB_TOKEN }}
+                tag: "${{ github.event.inputs.version }}"
+    release:
+        needs: tag
+        runs-on: ubuntu-latest
+        steps:
+        -   
+            name: System dependencies
+            run: sudo apt-get install curl -y
+        -  
+            name: Get doduda
+            run: |
+                curl -s https://api.github.com/repos/dofusdude/doduda/releases/latest \
+                | grep "browser_download_url.*Linux_x86_64.tar.gz" \
+                | cut -d : -f 2,3 \
+                | tr -d \" \
+                | wget -qi -
+                tar -xzf doduda_Linux_x86_64.tar.gz
+                chmod +x doduda
+        -
+            name: Get data
+            run: |
+                sudo ./doduda --release beta
+                sudo ./doduda parse --indent --release beta
+        -
+            name: Group images
+            run: |
+                tar -czf items_images.tar.gz data/img/item/
+                tar -czf mounts_images.tar.gz data/img/mount/
+
+                tar -czf items_images_vector.tar.gz data/vector/item/
+                tar -czf mounts_images_vector.tar.gz data/vector/mount/
+        - 
+            name: Upload assets
+            uses: "marvinpinto/action-automatic-releases@latest"
+            with:
+              repo_token: "${{ secrets.GITHUB_TOKEN }}"
+              prerelease: false
+              title: "${{ github.event.inputs.version }}"
+              automatic_release_tag: "${{ github.event.inputs.version }}"
+              files: |
+                data/*.json
+                data/languages/*.json
+                items_images.tar.gz
+                mounts_images.tar.gz
+                items_images_vector.tar.gz
+                mounts_images_vector.tar.gz
+        -
+            name: Notify doduapi to update
+            run: curl -X POST https://dofusdu.de/dofus2beta/update/${{ secrets.DODUAPI_TOKEN }}
