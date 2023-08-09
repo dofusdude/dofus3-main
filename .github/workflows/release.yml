@@ -42,7 +42,7 @@ jobs:
             name: Get data
             run: |
                 sudo ./doduda --headless --release beta
-                sudo ./doduda parse --indent --release beta
+                sudo ./doduda map --headless --indent --release beta
         -
             name: Group images
             run: |
