@@ -44,13 +44,31 @@ jobs:
                 sudo ./doduda --headless --release beta
                 sudo ./doduda map --headless --indent --release beta
         -
-            name: Group images
+            name: Images
             run: |
                 tar -czf items_images.tar.gz data/img/item/
                 tar -czf mounts_images.tar.gz data/img/mount/
 
                 tar -czf items_images_vector.tar.gz data/vector/item/
                 tar -czf mounts_images_vector.tar.gz data/vector/mount/
+
+                sudo ./doduda render data/vector/mount data/img/mount 200 --headless --incremental dofusdude/dofus2-beta/mounts_images_200
+                tar -czf mounts_images_200.tar.gz $( find data/img/mount -name "*-200.png" )
+
+                sudo ./doduda render data/vector/mount data/img/mount 400 --headless --incremental dofusdude/dofus2-beta/mounts_images_400
+                tar -czf mounts_images_400.tar.gz $( find data/img/mount -name "*-400.png" )
+
+                sudo ./doduda render data/vector/mount data/img/mount 800 --headless --incremental dofusdude/dofus2-beta/mounts_images_800
+                tar -czf mounts_images_800.tar.gz $( find data/img/mount -name "*-800.png" )
+
+                sudo ./doduda render data/vector/item data/img/item 200 --headless --incremental dofusdude/dofus2-beta/items_images_200
+                tar -czf items_images_200.tar.gz $( find data/img/item -name "*-200.png" )
+
+                sudo ./doduda render data/vector/item data/img/item 400 --headless --incremental dofusdude/dofus2-beta/items_images_400
+                tar -czf items_images_400.tar.gz $( find data/img/item -name "*-400.png" )
+
+                sudo ./doduda render data/vector/item data/img/item 800 --headless --incremental dofusdude/dofus2-beta/items_images_800
+                tar -czf items_images_800.tar.gz $( find data/img/item -name "*-800.png" )
         - 
             name: Upload assets
             uses: "marvinpinto/action-automatic-releases@latest"
@@ -63,7 +81,13 @@ jobs:
                 data/*.json
                 data/languages/*.json
                 items_images.tar.gz
+                items_images_200.tar.gz
+                items_images_400.tar.gz
+                items_images_800.tar.gz
                 mounts_images.tar.gz
+                mounts_images_200.tar.gz
+                mounts_images_400.tar.gz
+                mounts_images_800.tar.gz
                 items_images_vector.tar.gz
                 mounts_images_vector.tar.gz
         -
