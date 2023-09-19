@@ -41,6 +41,7 @@ jobs:
         -
             name: Get data
             run: |
+                docker pull stelzo/swf-renderer:latest
                 sudo ./doduda --headless --release beta
                 sudo ./doduda map --headless --indent --release beta
         -
