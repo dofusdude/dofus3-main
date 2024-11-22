@@ -34,6 +34,8 @@ echo "Done with loading"
 
 mkdir out
 
+ls -al
+
 mv data/*.json out/
 mv data/languages/*.json out/
 echo "Moved json files"
