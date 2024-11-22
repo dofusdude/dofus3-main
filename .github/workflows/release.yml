@@ -28,7 +28,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Download assets
-        run: ./download.sh "${{ github.event.inputs.version }}"
+        run: ./download.sh ${{ github.event.inputs.version }}
       - name: Upload assets
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
