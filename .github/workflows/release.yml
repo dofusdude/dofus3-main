@@ -40,5 +40,5 @@ jobs:
       - name: Notify doduapi to update
         run: |
           curl -X POST \
-          https://api.dofusdu.de/dofus2beta/update/${{ secrets.DODUAPI_TOKEN }} \
+          https://api.dofusdu.de/dofus3beta/update/${{ secrets.DODUAPI_TOKEN }} \
           -d '{"version":"${{ github.event.inputs.version }}"}'
