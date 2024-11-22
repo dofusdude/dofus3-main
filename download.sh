@@ -34,14 +34,17 @@ echo "Done with loading"
 
 mkdir out
 
-tar -czf items_images.tar.gz $(find data/img/item -name "*.png" ! -name "*-200.png")
-tar -czf items_images_200.tar.gz $( find data/img/item -name "*-200.png" )
-
-mv items_images.tar.gz out/
-mv items_images_200.tar.gz out/
-
 mv data/*.json out/
 mv data/languages/*.json out/
+echo "Moved json files"
+
+tar -czf items_images.tar.gz $(find data/img/item -name "*.png" ! -name "*-200.png")
+echo "Compressed all icon images"
+mv items_images.tar.gz out/
+
+tar -czf items_images_200.tar.gz $(find data/img/item -name "*-200.png")
+echo "Compressed all sd images"
+mv items_images_200.tar.gz out/
 
 echo "Cleaning up"
 rm -rf data
