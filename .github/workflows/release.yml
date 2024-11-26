@@ -39,6 +39,8 @@ jobs:
           ./doduda --version
       - name: Download
         run: ./doduda --headless --release beta --dofus-version ${{ github.event.inputs.version }} --output ./data
+      - name: Map
+        run: ./doduda map --headless --release beta --output ./data
       - name: Package
         run: |
           mkdir out
