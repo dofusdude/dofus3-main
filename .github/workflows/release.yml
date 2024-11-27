@@ -53,6 +53,12 @@ jobs:
 
           tar -czf items_images_128.tar.gz $(find data/img/item/2x -name "*.png")
           mv items_images_128.tar.gz out/
+
+          tar -czf mounts_images_64.tar.gz $(find data/img/mount/small -name "*.png")
+          mv mounts_images_64.tar.gz out/
+
+          tar -czf mounts_images_256.tar.gz $(find data/img/mount/big -name "*.png")
+          mv mounts_images_256.tar.gz out/
       - name: Upload
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
