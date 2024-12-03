@@ -32,6 +32,8 @@ jobs:
           docker pull stelzo/doduda-umbu:amd64
           docker pull stelzo/assetstudio-cli:amd64
       - name: Get doduda
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           gh release download -R dofusdude/doduda -p "doduda_Linux_x86_64.tar.gz"
           tar -xzf "doduda_Linux_x86_64.tar.gz"
