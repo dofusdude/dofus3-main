@@ -25,12 +25,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Prefetch docker images
-        run: |
-          docker pull stelzo/swf-to-svg:latest
-          docker pull stelzo/svg-to-png:latest
-          docker pull stelzo/doduda-umbu:amd64
-          docker pull stelzo/assetstudio-cli:amd64
       - name: Get doduda
         env:
           GH_TOKEN: ${{ github.token }}
