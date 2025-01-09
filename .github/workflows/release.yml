@@ -63,8 +63,3 @@ jobs:
           title: "${{ github.event.inputs.version }}"
           automatic_release_tag: "${{ github.event.inputs.version }}"
           files: out/*
-      - name: Notify doduapi to update
-        run: |
-          curl -X POST \
-          https://api.dofusdu.de/dofus3/v1/update/${{ secrets.DODUAPI_TOKEN }} \
-          -d '{"version":"${{ github.event.inputs.version }}"}'
