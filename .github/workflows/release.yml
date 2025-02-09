@@ -126,7 +126,7 @@ jobs:
           tar -czf smiley_images_32.tar.gz $(find data/img/smiley/1x -name "*.png")
           mv smiley_images_64.tar.gz out/
           tar -czf smiley_images_64.tar.gz $(find data/img/smiley/2x -name "*.png")
-          mv smiley_images_128.tar.gz out/
+          mv smiley_images_64.tar.gz out/
 
           tar -czf spell_images_48.tar.gz $(find data/img/spell/1x -name "*.png")
           mv spell_images_48.tar.gz out/
