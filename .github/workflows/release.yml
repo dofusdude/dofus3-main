@@ -46,15 +46,118 @@ jobs:
 
           tar -czf items_images_64.tar.gz $(find data/img/item/1x -name "*.png")
           mv items_images_64.tar.gz out/
-
           tar -czf items_images_128.tar.gz $(find data/img/item/2x -name "*.png")
           mv items_images_128.tar.gz out/
 
           tar -czf mounts_images_64.tar.gz $(find data/img/mount/small -name "*.png")
           mv mounts_images_64.tar.gz out/
-
           tar -czf mounts_images_256.tar.gz $(find data/img/mount/big -name "*.png")
           mv mounts_images_256.tar.gz out/
+
+          tar -czf achievement_images.tar.gz $(find data/img/achievement -name "*.png")
+          mv achievement_images.tar.gz out/
+
+          tar -czf achievement_category_images.tar.gz $(find data/img/achievement_category -name "*.png")
+          mv achievement_category_images.tar.gz out/
+
+          tar -czf alignment_images_1x.tar.gz $(find data/img/alignment/1x -name "*.png")
+          mv alignment_images_1x.tar.gz out/
+          tar -czf alignment_images_2x.tar.gz $(find data/img/alignment/2x -name "*.png")
+          mv alignment_images_2x.tar.gz out/
+
+          tar -czf challenge_images_32.tar.gz $(find data/img/challenge/1x -name "*.png")
+          mv challenge_images_32.tar.gz out/
+          tar -czf challenge_images_64.tar.gz $(find data/img/challenge/2x -name "*.png")
+          mv challenge_images_64.tar.gz out/
+
+          tar -czf class_head_images_32.tar.gz $(find data/img/class_head/1x -name "*.png")
+          mv class_head_images_32.tar.gz out/
+          tar -czf class_head_images_64.tar.gz $(find data/img/class_head/2x -name "*.png")
+          mv class_head_images_64.tar.gz out/
+
+          tar -czf companion_images_84.tar.gz $(find data/img/companion/1x -name "*.png")
+          mv companion_images_84.tar.gz out/
+          tar -czf companion_images_168.tar.gz $(find data/img/companion/2x -name "*.png")
+          mv companion_images_168.tar.gz out/
+
+          tar -czf cosmetic_images_64.tar.gz $(find data/img/cosmetic/1x -name "*.png")
+          mv cosmetic_images_64.tar.gz out/
+          tar -czf cosmetic_images_128.tar.gz $(find data/img/cosmetic/2x -name "*.png")
+          mv cosmetic_images_128.tar.gz out/
+
+          tar -czf emblem_backcontent_images_64.tar.gz $(find data/img/emblem/backcontent/1x -name "*.png")
+          mv emblem_backcontent_images_64.tar.gz out/
+          tar -czf emblem_backcontent_images_128.tar.gz $(find data/img/emblem/backcontent/2x -name "*.png")
+          mv emblem_backcontent_images_128.tar.gz out/
+          
+          tar -czf emblem_outlinealliance_images_64.tar.gz $(find data/img/emblem/outlinealliance/1x -name "*.png")
+          mv emblem_outlinealliance_images_64.tar.gz out/
+          tar -czf emblem_outlinealliance_images_128.tar.gz $(find data/img/emblem/outlinealliance/2x -name "*.png")
+          mv emblem_outlinealliance_images_128.tar.gz out/
+
+          tar -czf emblem_outlineguild_images_64.tar.gz $(find data/img/emblem/outlineguild/1x -name "*.png")
+          mv emblem_outlineguild_images_64.tar.gz out/
+          tar -czf emblem_outlineguild_images_128.tar.gz $(find data/img/emblem/outlineguild/2x -name "*.png")
+          mv emblem_outlineguild_images_128.tar.gz out/
+
+          tar -czf emblem_up_images_64.tar.gz $(find data/img/emblem/up/1x -name "*.png")
+          mv emblem_up_images_64.tar.gz out/
+          tar -czf emblem_up_images_128.tar.gz $(find data/img/emblem/up/2x -name "*.png")
+          mv emblem_up_images_128.tar.gz out/
+
+          tar -czf emote_images_32.tar.gz $(find data/img/emote/1x -name "*.png")
+          mv emote_images_32.tar.gz out/
+          tar -czf emote_images_64.tar.gz $(find data/img/emote/2x -name "*.png")
+          mv emote_images_64.tar.gz out/
+
+          tar -czf job_images_32.tar.gz $(find data/img/job/1x -name "*.png")
+          mv job_images_32.tar.gz out/
+          tar -czf job_images_64.tar.gz $(find data/img/job/2x -name "*.png")
+          mv job_images_64.tar.gz out/
+
+          tar -czf misc_images.tar.gz $(find data/img/misc -name "*.png")
+          mv misc_images.tar.gz out/
+
+          tar -czf monster_images_64.tar.gz $(find data/img/monster/1x -name "*.png")
+          mv monster_images_64.tar.gz out/
+          tar -czf monster_images_128.tar.gz $(find data/img/monster/2x -name "*.png")
+          mv monster_images_128.tar.gz out/
+
+          tar -czf smiley_images_32.tar.gz $(find data/img/smiley/1x -name "*.png")
+          mv smiley_images_64.tar.gz out/
+          tar -czf smiley_images_64.tar.gz $(find data/img/smiley/2x -name "*.png")
+          mv smiley_images_128.tar.gz out/
+
+          tar -czf spell_images_48.tar.gz $(find data/img/spell/1x -name "*.png")
+          mv spell_images_48.tar.gz out/
+          tar -czf spell_images_96.tar.gz $(find data/img/spell/2x -name "*.png")
+          mv spell_images_96.tar.gz out/
+
+          tar -czf spell_state_images.tar.gz $(find data/img/spell_state -name "*.png")
+          mv spell_state_images.tar.gz out/
+
+          tar -czf statistics_images_48.tar.gz $(find data/img/statistics/1x -name "*.png")
+          mv statistics_images_48.tar.gz out/
+          tar -czf statistics_images_96.tar.gz $(find data/img/statistics/2x -name "*.png")
+          mv statistics_images_96.tar.gz out/
+
+          tar -czf ui_documents_images.tar.gz $(find data/img/ui/documents -name "*.png")
+          mv ui_documents_images.tar.gz out/
+
+          tar -czf ui_guidebook_images.tar.gz $(find data/img/ui/guidebook -name "*.png")
+          mv ui_guidebook_images.tar.gz out/
+
+          tar -czf ui_house_images.tar.gz $(find data/img/ui/house -name "*.png")
+          mv ui_house_images.tar.gz out/
+
+          tar -czf ui_illustration_images.tar.gz $(find data/img/ui/illustration -name "*.png")
+          mv ui_illustration_images.tar.gz out/
+
+          tar -czf ui_ornaments_images.tar.gz $(find data/img/ui/ornaments -name "*.png")
+          mv ui_ornaments_images.tar.gz out/
+
+          tar -czf worldmap_images.tar.gz $(find data/img/worldmap -name "*.png")
+          mv worldmap_images.tar.gz out/
       - name: Upload
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
