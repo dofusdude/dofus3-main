@@ -34,7 +34,7 @@ jobs:
           chmod +x doduda
           ./doduda --version
       - name: Download
-        run: ./doduda --headless --dofus-version ${{ github.event.inputs.version }} --output ./data
+        run: ./doduda --headless --jobs 1 --dofus-version ${{ github.event.inputs.version }} --output ./data
       - name: Map
         run: ./doduda map --headless --output ./data
       - name: Package
