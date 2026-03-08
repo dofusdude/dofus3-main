@@ -44,15 +44,13 @@ jobs:
           mv data/*.json out/
           mv data/languages/*.json out/
 
+          # tar -czf mapdata.tar.gz $(find data/map -name "*.json")
+          # mv mapdata.tar.gz out/
+
           tar -czf items_images_64.tar.gz $(find data/img/item/1x -name "*.png")
           mv items_images_64.tar.gz out/
           tar -czf items_images_128.tar.gz $(find data/img/item/2x -name "*.png")
           mv items_images_128.tar.gz out/
-
-          tar -czf mounts_images_64.tar.gz $(find data/img/mount/small -name "*.png")
-          mv mounts_images_64.tar.gz out/
-          tar -czf mounts_images_256.tar.gz $(find data/img/mount/big -name "*.png")
-          mv mounts_images_256.tar.gz out/
 
           tar -czf achievement_images.tar.gz $(find data/img/achievement -name "*.png")
           mv achievement_images.tar.gz out/
@@ -89,7 +87,7 @@ jobs:
           mv emblem_backcontent_images_64.tar.gz out/
           tar -czf emblem_backcontent_images_128.tar.gz $(find data/img/emblem/backcontent/2x -name "*.png")
           mv emblem_backcontent_images_128.tar.gz out/
-          
+
           tar -czf emblem_outlinealliance_images_64.tar.gz $(find data/img/emblem/outlinealliance/1x -name "*.png")
           mv emblem_outlinealliance_images_64.tar.gz out/
           tar -czf emblem_outlinealliance_images_128.tar.gz $(find data/img/emblem/outlinealliance/2x -name "*.png")
